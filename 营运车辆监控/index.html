@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="<%=basePath%>">
+    <meta name="viewport" content="user-scalable,width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title></title>
+    <!--公用-->
+    <link rel="stylesheet" href="common/css/base.css">
+    <script src="common/js/3.7.2/echarts.min.js"></script>
+    <script src="common/js/template/art-template/template-web.js"></script>
+    <script src="common/js/jquery.js"></script>
+   <!--自定义-->
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js"></script>
+    <script src="js/loadEcharts.js"></script>
+    <script>
+        $(function () {
+            main.init();
+            Echarts.init();
+        });
+    </script>
+</head>
+<body>
+<div class="body">
+    <div class="head-box">
+        <div class="logout-box"></div>
+        <div class="link-box"></div>
+        危险驾驶实时监控平台
+        <div class="time-box">2024年4月15日</div>
+    </div>
+    <div class="main">
+        <!--left-->
+        <div class="col">
+            <!--巡查视频问题-->
+            <div class="col-box1">
+               <div class="col-title">营运车辆视频</div>
+                <div class="col-main">
+                    <ul class="xcspwt-box js-xcspwt">
+                        <li>
+                            <span>驾驶员A</span>
+                            <span title="南京信息工程大学地铁站1号出口监控点">陕A76543</span>
+                            <span title="视频信号正常">视频信号正常</span>
+                        </li>
+                        <li>
+                            <span>驾驶员B</span>
+                            <span title="南京信息工程大学地铁站1号出口监控点">陕A37629</span>
+                            <span title="视频信号正常">视频信号正常</span>
+                        </li>
+                        <li>
+                            <span>驾驶员C</span>
+                            <span title="南京信息工程大学地铁站1号出口监控点">陕A89564</span>
+                            <span title="视频信号正常">视频信号正常</span>
+                        </li>
+                        <li>
+                            <span>驾驶员D</span>
+                            <span title="南京信息工程大学地铁站1号出口监控点">陕A74624</span>
+                            <span title="视频信号正常">视频信号正常</span>
+                        </li>
+                        <li>
+                            <span>驾驶员E</span>
+                            <span title="南京信息工程大学地铁站1号出口监控点">陕A90942</span>
+                            <span title="视频信号正常">视频信号正常</span>
+                        </li>
+                        <li>
+                            <span>驾驶员F</span>
+                            <span title="南京信息工程大学地铁站1号出口监控点">陕A08742</span>
+                            <span title="视频信号正常">视频信号正常</span>
+                        </li>
+                        <li>
+                            <span>驾驶员G</span>
+                            <span title="南京信息工程大学地铁站1号出口监控点">陕A78361</span>
+                            <span title="视频信号正常">视频信号正常</span>
+                        </li>
+                        <li>
+                            <span>驾驶员H</span>
+                            <span title="南京信息工程大学地铁站1号出口监控点">陕A90563</span>
+                            <span title="视频信号正常">视频信号正常</span>
+                        </li>
+                        <li>
+                            <span>驾驶员I</span>
+                            <span title="南京信息工程大学地铁站1号出口监控点">陕A87752</span>
+                            <span title="视频信号正常">视频信号正常</span>
+                        </li>
+                        <li>
+                            <span>驾驶员J</span>
+                            <span title="南京信息工程大学地铁站1号出口监控点">陕A98524</span>
+                            <span title="视频信号正常">视频信号正常</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--巡查视频问题统计-->
+            <div class="col-box1">
+                <div class="col-title">已发现危险驾驶行为统计</div>
+                <div class="col-main">
+                    <!--视频问题统计-->
+                    <ul class="spwtzgtj-box">
+                        <li>
+                            <span>问题总数</span>
+                            <span>234</span>
+                        </li>
+                        <li>
+                            <span>已整改</span>
+                            <span>34</span>
+                        </li>
+                        <li>
+                            <span>未整改</span>
+                            <span>200</span>
+                        </li>
+                    </ul>
+                    <div class="spwttj-echarts" id="spwttjEchart">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--center-->
+        <div class="col">
+            <!--预警信息推送-->
+            <div class="col-box1">
+                <ul class="zpsl-box">
+                   <li>
+                       <span>今日抓拍</span>
+                       <span>1245条</span>
+                   </li>
+                   <li>
+                       <span>抓拍总数</span>
+                       <span>3421条</span>
+                   </li>
+                </ul>
+                <div class="col-title">危险驾驶行为信息推送</div>
+                <div class="col-main js-tjxxtsxq" style="height: calc(100% - 190px);margin-top: 10px">
+                    <div class="yjxxts-box">
+                        <img src="img/国一.png">
+                    </div>
+                    <div class="yjxxts-box">
+                        <img src="img/国二.png">
+                    </div>
+                    <div class="yjxxts-box">
+                        <img src="img/国三.png">
+                    </div>
+                </div>
+            </div>
+            <!--预警信息统计-->
+            <div class="col-box1">
+                <div class="col-title">危险驾驶行为统计</div>
+                <div class="col-main ">
+                    <ul class="yjxxtj-title js-tab">
+                        <li class="on"></li>
+                        <li></li>
+                    </ul>
+                    <div class="yjxxtj-box">
+                        <ul class="wgxc-box js-wgxcBox">
+                            <li>
+                                <div class="wgxc-bar"><span class="wgxc-sl-bar" style="height:30%"></span></div>
+                                <div class="wgxcName">右手发短信</div>
+                            </li>
+                            <li>
+                                <div class="wgxc-bar"><span class="wgxc-sl-bar" style="height:59%"></span></div>
+                                <div class="wgxcName">左手发短信</div>
+                            </li>
+                            <li>
+                                <div class="wgxc-bar"><span class="wgxc-sl-bar" style="height:41%"></span></div>
+                                <div class="wgxcName">右手打电话</div>
+                            </li>
+                            <li>
+                                <div class="wgxc-bar"><span class="wgxc-sl-bar" style="height:20%"></span></div>
+                                <div class="wgxcName">左手打电话</div>
+                            </li>
+                            <li>
+                                <div class="wgxc-bar"><span class="wgxc-sl-bar" style="height:86%"></span></div>
+                                <div class="wgxcName">操作收音机</div>
+                            </li>
+                            <li>
+                                <div class="wgxc-bar"><span class="wgxc-sl-bar" style="height:67%"></span></div>
+                                <div class="wgxcName">喝东西</div>
+                            </li>
+                            <li>
+                                <div class="wgxc-bar"><span class="wgxc-sl-bar" style="height:30%"></span></div>
+                                <div class="wgxcName">手伸到后面</div>
+                            </li>
+                            <li>
+                                <div class="wgxc-bar"><span class="wgxc-sl-bar" style="height:30%"></span></div>
+                                <div class="wgxcName">整理发型和妆容</div>
+                            </li>
+                            <li>
+                                <div class="wgxc-bar"><span class="wgxc-sl-bar" style="height:30%"></span></div>
+                                <div class="wgxcName">与乘客交谈</div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--right-->
+        <div class="col">
+            <!--全市监控点位统计-->
+            <div class="col-box1">
+                <div class="col-title">
+                    区域营运车辆数量统计
+                </div>
+                <div class="col-main">
+                    <div class="qsjk-box" id="qsjkdwEcharts">
+                        <!--全市监控点位-->
+                    </div>
+                </div>
+            </div>
+            <!--系统公告&资源下载-->
+            <div class="col-box1">
+                <div class="col-title">
+                    <ul class="xtggzlxz-box js-tab js-xtggzlxz">
+                        <li>已激活视频车辆</li>
+                    </ul>
+                </div>
+                <div class="col-main" style=" height:calc(100% - 75px);padding:20px 0;overflow: hidden">
+                    <!--资源下载-->
+
+                    <!--系统公告-->
+                    <div class="xtggzlxz-main" style="display: none">
+                        <ul class="xcspwt-box js-xtggScroll">
+                            <li>
+                                陕A87752摄像头1
+                            </li>
+                            <li>
+                                陕A87752摄像头2
+                            </li>
+                            <li>
+                                陕A37629摄像头1
+                            </li>
+                            <li>
+                                陕A37629摄像头2
+                            </li>
+                            <li>
+                                陕A89547摄像头1
+                            </li>
+                            <li>
+                                陕A89547摄像头2
+                            </li>
+                            <li>
+                                陕A75462摄像头1
+                            </li>
+                            <li>
+                                陕75462摄像头2
+                            </li>
+                            <li>
+                                陕A54687摄像头1
+                            </li>
+                            <li>
+                                陕A54687摄像头2
+                            </li>
+                            <li>
+                                陕A87541摄像头1
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--预警信息推送弹框-->
+        <div class="yjxxts-tkbox js-yjxxtsTkbox">
+            <img src="img/国二png">
+            <div class="yjxxts-xqbox">
+                <div class="col-title">详情</div>
+                <div class="yjxxts-xqmain">
+                    <table>
+                        <tr>
+                            <td>摄像头编号</td>
+                            <td>陕A87541摄像头1</td>
+                        </tr>
+                        <tr>
+                            <td>预警时间</td>
+                            <td>2024-4-15</td>
+                        </tr>
+                        <tr>
+                            <td>违规类型</td>
+                            <td>右手玩手机</td>
+                        </tr>
+                        <tr>
+                            <td>违规状态</td>
+                            <td>已处理</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
